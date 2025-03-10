@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Message } from "../../types/Message";
 import styles from "./ChatMessage.module.less";
 import DoeLogoIcon from "@assets/icons/DoeLogo.svg?react";
@@ -36,4 +37,4 @@ const ChatMessage = ({ message, prevRole }: ChatMessageProps) => {
   );
 };
 
-export default ChatMessage;
+export default memo(ChatMessage);

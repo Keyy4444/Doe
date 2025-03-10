@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Editor } from "@tiptap/react";
 import styles from "./Sidebar.module.less";
 import { SidebarGeneral } from "../SidebarGeneral/SidebarGeneral";
@@ -26,4 +27,4 @@ const Sidebar = ({ editor }: SidebarProps) => {
   );
 };
 
-export default Sidebar;
+export default memo(Sidebar);
