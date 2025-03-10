@@ -6,7 +6,7 @@ interface ChatHistoryProps {
 
 const ChatHistory = ({ messages }: ChatHistoryProps) => {
   return (
-    <div className={styles.chatMessages}>
+    <div className={styles.chatHistory}>
       {messages.map((msg, index) => (
         <div key={index} className={styles.chatMessage} dangerouslySetInnerHTML={{ __html: msg }} />
       ))}
