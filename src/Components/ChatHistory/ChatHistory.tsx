@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { Message } from "../../types/Message";
 import styles from "./ChatHistory.module.less";
 import ChatMessage from "../ChatMessage/ChatMessage";
@@ -23,4 +22,4 @@ const ChatHistory = ({ messages }: ChatHistoryProps) => {
   );
 };
 
-export default memo(ChatHistory);
+export default ChatHistory;
