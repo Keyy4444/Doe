@@ -12,9 +12,6 @@
     "types": [
       "vite-plugin-svgr"
     ],
-    "include": [
-      "src"
-    ],
     "baseUrl": "./src",
     "paths": {
       "@/*": [
