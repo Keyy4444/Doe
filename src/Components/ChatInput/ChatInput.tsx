@@ -1,17 +1,12 @@
-import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
+import { Editor, EditorContent } from "@tiptap/react";
 import styles from "./ChatInput.module.less";
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
+  editor: Editor | null;
 }
 
-const ChatInput = ({ onSendMessage }: ChatInputProps) => {
-  const editor = useEditor({
-    extensions: [StarterKit],
-    content: "",
-  });
-
+const ChatInput = ({ onSendMessage, editor }: ChatInputProps) => {
   const handleSendMessage = () => {
     if (!editor || editor.getHTML().trim() === "<p></p>") return;
 

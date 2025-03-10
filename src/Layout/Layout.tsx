@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Sidebar } from "../Components/Sidebar/Sidebar";
+// import { Sidebar } from "../Components/Sidebar/Sidebar";
 import styles from "./Layout.module.less";
 
 interface LayoutProps {
@@ -9,7 +9,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className={styles.main}>{children}</div>
     </>
   );
