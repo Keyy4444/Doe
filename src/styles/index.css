@@ -26,3 +26,19 @@ body {
 *::after {
   box-sizing: border-box;
 }
+
+.tiptap p.is-editor-empty:first-child {
+  position: relative;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  color: #b5b5b5;
+
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.2) 100%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.2) 100%);
+  color: #b5b5b5;
+}

@@ -6,12 +6,19 @@ import { useEditor } from "@tiptap/react";
 import Sidebar from "../Sidebar/Sidebar";
 import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
+import Placeholder from "@tiptap/extension-placeholder";
 
 const ChatContainer = () => {
   const [messages, setMessages] = useState<string[]>([]);
 
   const editor = useEditor({
-    extensions: [StarterKit, Underline],
+    extensions: [
+      StarterKit,
+      Underline,
+      Placeholder.configure({
+        placeholder: "Ask Doe anything you'd like about the world...",
+      }),
+    ],
     content: "",
   });
 
