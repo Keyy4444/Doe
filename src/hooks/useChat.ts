@@ -21,7 +21,7 @@ export const useChat = () => {
         addMessage("ai", "Hey, John Smith, I'm Doe!");
         addMessage("ai", "Let me introduce my main functionality.");
       }, 500);
-    } else if (messageCount === 4) {
+    } else {
       setTimeout(() => {
         addMessage(
           "ai",
@@ -35,13 +35,6 @@ export const useChat = () => {
             </code></pre>`
         );
       }, 1000);
-    } else {
-      setTimeout(() => {
-        addMessage(
-          "ai",
-          `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa possimus sed magni culpa, illo deserunt qui saepe molestiae perspiciatis inventore tempore ut ipsum officiis reprehenderit reiciendis, vitae eveniet ratione excepturi?`
-        );
-      }, 500);
     }
   };
 
