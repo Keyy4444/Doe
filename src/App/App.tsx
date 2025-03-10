@@ -1,10 +1,11 @@
+import Chat from "../Components/ChatContainer/ChatContainer";
 import Layout from "../Layout/Layout";
 import "../styles/App.css";
 
 function App() {
   return (
     <Layout>
-      <div>test</div>
+      <Chat />
     </Layout>
   );
 }
