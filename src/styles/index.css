@@ -25,6 +25,7 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 .tiptap p.is-editor-empty:first-child {

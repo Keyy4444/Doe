@@ -1,14 +1,20 @@
+import { Message } from "../../types/Message";
 import styles from "./ChatHistory.module.less";
+import ChatMessage from "../ChatMessage/ChatMessage";
 
 interface ChatHistoryProps {
-  messages: string[];
+  messages: Message[];
 }
 
 const ChatHistory = ({ messages }: ChatHistoryProps) => {
   return (
-    <div className={styles.chatHistory}>
+    <div className={styles.chatHistoryContainer}>
       {messages.map((msg, index) => (
-        <div key={index} className={styles.chatMessage} dangerouslySetInnerHTML={{ __html: msg }} />
+        <ChatMessage
+          key={index}
+          message={msg}
+          prevRole={index > 0 ? messages[index - 1]?.role : undefined}
+        />
       ))}
     </div>
   );
