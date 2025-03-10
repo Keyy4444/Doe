@@ -1,0 +1,177 @@
+.sidebarProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sidebarCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.border {
+  width: 40px;
+  height: 1px;
+  background-color: #b5b5b5;
+  opacity: 0.2;
+}
+
+.imageWrapper {
+  width: 40px;
+  height: 40px;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.switch {
+  position: relative;
+  width: 40px;
+  height: 72px;
+  display: inline-block;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: #ddd;
+  border-radius: 20px;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  transition: all 1s ease;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 5px;
+  top: 4px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: 0.6s;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateY(34px);
+}
+
+.sunIcon {
+  width: 18px;
+  height: 18px;
+  transition: 0.3s;
+  z-index: 2;
+  transition: all 1s ease;
+}
+
+.moonIcon {
+  width: 18px;
+  height: 18px;
+  transition: 0.3s;
+  z-index: 2;
+
+  transition: all 1s ease;
+}
+
+.switch input:checked + .slider .sunIcon {
+  opacity: 0.5;
+  animation: sun-rotation-out 0.6s ease-out forwards;
+
+  path {
+    fill: #ffffff;
+  }
+}
+
+.switch input:checked + .slider .moonIcon {
+  opacity: 1;
+  animation: moon-rotation 1s ease-out forwards;
+
+  path {
+    fill: rgba(105, 95, 82, 0.8);
+  }
+}
+
+.switch input:not(:checked) + .slider .sunIcon {
+  opacity: 1;
+  animation: sun-rotation 1s ease-out forwards;
+}
+
+.switch input:not(:checked) + .slider .moonIcon {
+  opacity: 0.5;
+}
+
+.switch input:checked + .slider {
+  background: rgba(105, 95, 82, 0.8);
+  //   background: rgba(83, 73, 61, 0.9);
+}
+
+@keyframes sun-rotation-out {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes sun-rotation {
+  0% {
+    transform: rotate(0) scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(90deg) scale(1);
+  }
+}
+
+// @keyframes moon-rotation {
+//   0% {
+//     transform: rotate(0);
+//   }
+//   50% {
+//     transform: rotate(20deg);
+//   }
+//   100% {
+//     transform: rotate(0);
+//   }
+// }
+
+@keyframes moon-rotation {
+  0% {
+    transform: translateY(0) rotate(0) scale(0.9);
+    opacity: 0.8;
+  }
+  40% {
+    transform: rotate(20deg) scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(1px) rotate(5deg) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) rotate(0) scale(1);
+  }
+}

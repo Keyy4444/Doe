@@ -2,13 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
+  justify-content: flex-end;
+  gap: 12px;
 
   position: fixed;
   overflow: hidden;
   height: 100vh;
   width: 76px;
-  padding: 16px 12px;
+  padding: 18px;
   box-sizing: border-box;
   z-index: 100;
 
@@ -17,29 +18,12 @@
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.sidebarBtn {
-  background: none;
-  border: none;
-  font-size: 16px;
-  padding: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-  color: #333;
-  width: 40px;
-  height: 40px;
+.trashIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-  border-radius: 4px;
-
-  &:hover {
-    background: #ddd;
-  }
-
-  &.active {
-    background: #007bff;
-    color: white;
-    font-weight: bold;
-  }
+  width: 40px;
+  height: 40px;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
 }

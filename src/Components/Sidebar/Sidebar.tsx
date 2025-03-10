@@ -1,5 +1,10 @@
 import { Editor } from "@tiptap/react";
 import styles from "./Sidebar.module.less";
+import { SidebarGeneral } from "../SidebarGeneral/SidebarGeneral";
+import { SidebarFormatting } from "../SidebarFormatting/SidebarFormatting";
+import { SidebarActions } from "../SidebarActions/SidebarActions";
+import { SidebarProfile } from "../SidebarProfile/SidebarProfile";
+import TrashIcon from "@assets/icons/Trash.svg?react";
 
 interface SidebarProps {
   editor: Editor | null;
@@ -10,36 +15,13 @@ const Sidebar = ({ editor }: SidebarProps) => {
 
   return (
     <div className={styles.sidebar}>
-      <button
-        onClick={() => editor.chain().focus().toggleBold().run()}
-        className={editor.isActive("bold") ? styles.active : ""}
-      >
-        B
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={editor.isActive("italic") ? styles.active : ""}
-      >
-        I
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleUnderline().run()}
-        className={editor.isActive("underline") ? styles.active : ""}
-      >
-        U
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleStrike().run()}
-        className={editor.isActive("strike") ? styles.active : ""}
-      >
-        S
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-        className={editor.isActive("codeBlock") ? styles.active : ""}
-      >
-        {"</>"}
-      </button>
+      <SidebarProfile />
+      <SidebarGeneral />
+      <SidebarFormatting editor={editor} />
+      <SidebarActions />
+      <div className={styles.trashIcon}>
+        <TrashIcon />
+      </div>
     </div>
   );
 };
